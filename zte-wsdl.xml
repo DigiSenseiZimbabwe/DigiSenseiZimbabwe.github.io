@@ -1,0 +1,3859 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://com.ztesoft.zsmart/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://com.ztesoft.zsmart/service" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://com.ztesoft.zsmart/service">
+<wsdl:documentation>Webservice</wsdl:documentation>
+<wsdl:types>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://com.ztesoft.zsmart/xsd">
+<xs:complexType name="tAcctAttrDto">
+<xs:sequence>
+<xs:element name="AttrCode" nillable="true" type="xs:string"/>
+<xs:element name="AttrValue" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AcctAttrDto" type="ns:tAcctAttrDto"/>
+<xs:complexType name="tActExtVPNReq">
+<xs:sequence>
+<xs:element name="VPNID" type="xs:long"/>
+<xs:element name="EffDate" nillable="true" type="xs:date"/>
+<xs:element name="PaymentMethod" type="xs:string"/>
+<xs:element name="Amount" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ActExtVPNReq" type="ns:tActExtVPNReq"/>
+<xs:complexType name="tActExtVPNResponse">
+<xs:sequence/>
+</xs:complexType>
+<xs:element name="ActExtVPNResponse" type="ns:tActExtVPNResponse"/>
+<xs:complexType name="tAddFellowISDNBO">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="UserPwd" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FellowISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="18"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FellowType">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="EffType">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="EffDate" nillable="true" type="xs:date"/>
+<xs:element name="ExpDate" nillable="true" type="xs:date"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AddFellowISDNBO" type="ns:tAddFellowISDNBO"/>
+<xs:complexType name="tAttrDto">
+<xs:sequence>
+<xs:element name="AttrCode" nillable="true" type="xs:string"/>
+<xs:element name="AttrValue" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AttrDto" type="ns:tAttrDto"/>
+<xs:complexType name="tAuthHeader">
+<xs:sequence>
+<xs:element name="Username" type="xs:string"/>
+<xs:element name="Password" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AuthHeader" type="ns:tAuthHeader"/>
+<xs:complexType name="tBalanceDto">
+<xs:sequence>
+<xs:element name="monetary" nillable="true" type="xs:string"/>
+<xs:element name="balance" nillable="true" type="xs:string"/>
+<xs:element name="acctResName" nillable="true" type="xs:string"/>
+<xs:element name="acctId" type="xs:long"/>
+<xs:element name="effDate" nillable="true" type="xs:string"/>
+<xs:element name="expDate" nillable="true" type="xs:date"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="BalanceDto" type="ns:tBalanceDto"/>
+<xs:complexType name="tBillDto">
+<xs:sequence>
+<xs:element name="billNumber" nillable="true" type="xs:string"/>
+<xs:element name="billingCycleBeginDate" nillable="true" type="xs:date"/>
+<xs:element name="billingCycleEndDate" nillable="true" type="xs:date"/>
+<xs:element name="billAmount" nillable="true" type="xs:string"/>
+<xs:element name="due" nillable="true" type="xs:string"/>
+<xs:element name="adjustBefore" nillable="true" type="xs:string"/>
+<xs:element name="adjust" nillable="true" type="xs:string"/>
+<xs:element name="preBalance" nillable="true" type="xs:string"/>
+<xs:element name="disputeCharge" nillable="true" type="xs:string"/>
+<xs:element name="recvCharge" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="BillDto" type="ns:tBillDto"/>
+<xs:complexType name="tContactInfoDto">
+<xs:sequence>
+<xs:element name="ContactName" nillable="true" type="xs:string"/>
+<xs:element name="ContactCode" type="xs:string"/>
+<xs:element name="Title" nillable="true" type="xs:string"/>
+<xs:element name="Gender" nillable="true" type="xs:string"/>
+<xs:element name="Mobile" nillable="true" type="xs:string"/>
+<xs:element name="OfficePhone" nillable="true" type="xs:string"/>
+<xs:element name="Fax" nillable="true" type="xs:string"/>
+<xs:element name="Email" nillable="true" type="xs:string"/>
+<xs:element name="Address" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContactInfoDto" type="ns:tContactInfoDto"/>
+<xs:complexType name="tContactInfoDtoList">
+<xs:sequence>
+<xs:element name="ContactInfoDto" type="ns:tContactInfoDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ContactInfoDtoList" type="ns:tContactInfoDtoList"/>
+<xs:complexType name="tCreateCorporateCustomerReq">
+<xs:sequence>
+<xs:element name="CustCode" type="xs:string"/>
+<xs:element name="CompanyName" type="xs:string"/>
+<xs:element name="CompanyCategory" type="xs:string"/>
+<xs:element name="CertType" type="xs:string"/>
+<xs:element name="CertNbr" type="xs:string"/>
+<xs:element name="Address" nillable="true" type="xs:string"/>
+<xs:element name="RegDate" nillable="true" type="xs:date"/>
+<xs:element name="Fax" nillable="true" type="xs:string"/>
+<xs:element name="ContactInfoDtoList" nillable="true" type="ns:tContactInfoDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CreateCorporateCustomerReq" type="ns:tCreateCorporateCustomerReq"/>
+<xs:complexType name="tCreateCustReq">
+<xs:sequence>
+<xs:element name="CustCode" type="xs:string"/>
+<xs:element name="CustName" nillable="true" type="xs:string"/>
+<xs:element name="CustType" nillable="true" type="xs:string"/>
+<xs:element name="CertType" nillable="true" type="xs:string"/>
+<xs:element name="CertNbr" nillable="true" type="xs:string"/>
+<xs:element name="Address" nillable="true" type="xs:string"/>
+<xs:element name="Gender" nillable="true" type="xs:string"/>
+<xs:element name="PWD" nillable="true" type="xs:string"/>
+<xs:element name="AccountCode" nillable="true" type="xs:string"/>
+<xs:element name="PostPaidFlag" nillable="true" type="xs:string"/>
+<xs:element name="AccountPayFlag" nillable="true" type="xs:string"/>
+<xs:element name="ParentAccountCode" nillable="true" type="xs:string"/>
+<xs:element name="FirstName" nillable="true" type="xs:string"/>
+<xs:element name="SecondName" nillable="true" type="xs:string"/>
+<xs:element name="Birthday" nillable="true" type="xs:string"/>
+<xs:element name="Province" nillable="true" type="xs:string"/>
+<xs:element name="District" nillable="true" type="xs:string"/>
+<xs:element name="Occupation" nillable="true" type="xs:string"/>
+<xs:element name="FatherName" nillable="true" type="xs:string"/>
+<xs:element name="BillingCycleTypeCode" nillable="true" type="xs:string"/>
+<xs:element name="MotherName" nillable="true" type="xs:string"/>
+<xs:element name="ContactNumber" nillable="true" type="xs:string"/>
+<xs:element name="Email" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CreateCustReq" type="ns:tCreateCustReq"/>
+<xs:complexType name="tCreateCustomerReq">
+<xs:sequence>
+<xs:element name="CustCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustName">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="200"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Title">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="2"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertType">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="3"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertNbr">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="36"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Gender">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Birthday" type="xs:date"/>
+<xs:element name="MobileNumber" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustGrade">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="2"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Address">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="120"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PWD" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="State">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Email" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustAttrDtoList" nillable="true" type="ns:tCustAttrDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CreateCustomerReq" type="ns:tCreateCustomerReq"/>
+<xs:complexType name="tCustAttrDtoList">
+<xs:sequence>
+<xs:element name="CustAttrDto" nillable="true" type="ns:tCustAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CustAttrDtoList" type="ns:tCustAttrDtoList"/>
+<xs:complexType name="tCustAttrDto">
+<xs:sequence>
+<xs:element name="AttrCode" nillable="true" type="xs:string"/>
+<xs:element name="AttrValue" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CustAttrDto" type="ns:tCustAttrDto"/>
+<xs:complexType name="tCreditLimitDto">
+<xs:sequence>
+<xs:element name="objectId" type="xs:long"/>
+<xs:element name="objectType" nillable="true" type="xs:string"/>
+<xs:element name="ccType" type="xs:long"/>
+<xs:element name="ccTypeName" nillable="true" type="xs:string"/>
+<xs:element name="creditLimit" type="xs:long"/>
+<xs:element name="effDate" nillable="true" type="xs:date"/>
+<xs:element name="expDate" nillable="true" type="xs:date"/>
+<xs:element name="acmValue" type="xs:long"/>
+<xs:element name="usableValue" type="xs:long"/>
+<xs:element name="realBal" type="xs:long"/>
+<xs:element name="creditLimitUsed" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CreditLimitDto" type="ns:tCreditLimitDto"/>
+<xs:complexType name="tCustInfoDto">
+<xs:sequence>
+<xs:element name="custId" nillable="true" type="xs:string"/>
+<xs:element name="subsId" nillable="true" type="xs:string"/>
+<xs:element name="custCode" nillable="true" type="xs:string"/>
+<xs:element name="nationality" nillable="true" type="xs:string"/>
+<xs:element name="custGrade" nillable="true" type="xs:string"/>
+<xs:element name="custName" nillable="true" type="xs:string"/>
+<xs:element name="custType" nillable="true" type="xs:string"/>
+<xs:element name="certNum" nillable="true" type="xs:string"/>
+<xs:element name="mobileNumber" nillable="true" type="xs:string"/>
+<xs:element name="postAddress" nillable="true" type="xs:string"/>
+<xs:element name="certTypeName" nillable="true" type="xs:string"/>
+<xs:element name="custTypeName" nillable="true" type="xs:string"/>
+<xs:element name="gender" nillable="true" type="xs:string"/>
+<xs:element name="birthday" nillable="true" type="xs:string"/>
+<xs:element name="certId" nillable="true" type="xs:string"/>
+<xs:element name="certNbr" nillable="true" type="xs:string"/>
+<xs:element name="certTypeId" nillable="true" type="xs:string"/>
+<xs:element name="impGradeId" nillable="true" type="xs:string"/>
+<xs:element name="impGradeName" nillable="true" type="xs:string"/>
+<xs:element name="custCreditGradeId" nillable="true" type="xs:string"/>
+<xs:element name="custCreditGradeName" nillable="true" type="xs:string"/>
+<xs:element name="zipcode" nillable="true" type="xs:string"/>
+<xs:element name="address" nillable="true" type="xs:string"/>
+<xs:element name="email" nillable="true" type="xs:string"/>
+<xs:element name="phoneNumber" nillable="true" type="xs:string"/>
+<xs:element name="isPrePaid" nillable="true" type="xs:string"/>
+<xs:element name="msisdn" nillable="true" type="xs:string"/>
+<xs:element name="brandName" nillable="true" type="xs:string"/>
+<xs:element name="prodState" nillable="true" type="xs:string"/>
+<xs:element name="defLang" nillable="true" type="xs:string"/>
+<xs:element name="balanceDtoList" nillable="true" type="ns:tBalanceDto"/>
+<xs:element name="creditLimitDtoList" nillable="true" type="ns:tCreditLimitDto"/>
+<xs:element name="supServiceDtoList" nillable="true" type="ns:tSupServiceDto"/>
+<xs:element name="pricePlanDtoList" nillable="true" type="ns:tPricePlanDtoCust"/>
+<xs:element name="billDtoList" nillable="true" type="ns:tBillDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CustInfoDto" type="ns:tCustInfoDto"/>
+<xs:complexType name="tSupServiceDto">
+<xs:sequence>
+<xs:element name="serviceCode" nillable="true" type="xs:string"/>
+<xs:element name="serviceName" nillable="true" type="xs:string"/>
+<xs:element name="completedDate" nillable="true" type="xs:date"/>
+<xs:element name="expDate" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SupServiceDto" type="ns:tSupServiceDto"/>
+<xs:complexType name="tPricePlanDtoCust">
+<xs:sequence>
+<xs:element name="pricePlanCode" nillable="true" type="xs:string"/>
+<xs:element name="pricePlanName" nillable="true" type="xs:string"/>
+<xs:element name="createDate" nillable="true" type="xs:date"/>
+<xs:element name="effDate" nillable="true" type="xs:date"/>
+<xs:element name="expDate" nillable="true" type="xs:date"/>
+<xs:element name="pricePlanAttrDto" nillable="true" type="ns:tPricePlanActionDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanDtoCust" type="ns:tPricePlanDtoCust"/>
+<xs:complexType name="tPricePlanActionDto">
+<xs:sequence>
+<xs:element name="PricePlanIndex">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Action">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="EffType">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="EffDate" nillable="true" type="xs:date"/>
+<xs:element name="ExpDate" nillable="true" type="xs:date"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanActionDto" type="ns:tPricePlanActionDto"/>
+<xs:complexType name="tCustReq">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CustReq" type="ns:tCustReq"/>
+<xs:complexType name="tCustStateBO">
+<xs:sequence>
+<xs:element name="CustCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="State">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Reason" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CustStateBO" type="ns:tCustStateBO"/>
+<xs:complexType name="tCustStateRep">
+<xs:sequence>
+<xs:element name="ResponseDesc" type="xs:string"/>
+<xs:element name="ResponseCode" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CustStateRep" type="ns:tCustStateRep"/>
+<xs:complexType name="tDeActivatePromotionReq">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="PricePlanCode" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DeActivatePromotionReq" type="ns:tDeActivatePromotionReq"/>
+<xs:complexType name="tDelFellowISDNBO">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="UserPwd" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FellowType">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FellowISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="18"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DelFellowISDNBO" type="ns:tDelFellowISDNBO"/>
+<xs:complexType name="tDuplicateSIMCardReq">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="NewIMSI" type="xs:string"/>
+<xs:element name="NewICCID" nillable="true" type="xs:string"/>
+<xs:element name="UserPwd" type="xs:string"/>
+<xs:element name="Reason" nillable="true" type="xs:string"/>
+<xs:element name="ReasonID" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DuplicateSIMCardReq" type="ns:tDuplicateSIMCardReq"/>
+<xs:complexType name="tDuplicateSIMCardReq2">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="UserPwd" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="NewIMSI">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="NewICCID" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ReasonID" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="2"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Reason" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PartyCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="RefNo" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DuplicateSIMCardReq2" type="ns:tDuplicateSIMCardReq2"/>
+<xs:complexType name="tFellowISDNDto">
+<xs:sequence>
+<xs:element name="FellowISDN" type="xs:string"/>
+<xs:element name="FellowType" type="xs:string"/>
+<xs:element name="FellowTypeName" type="xs:string"/>
+<xs:element name="CreatedDate" type="xs:date"/>
+<xs:element name="EffDate" type="xs:date"/>
+<xs:element name="ExpDate" nillable="true" type="xs:date"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="FellowISDNDto" type="ns:tFellowISDNDto"/>
+<xs:complexType name="tFellowISDNLogDto">
+<xs:sequence>
+<xs:element name="UpdateDate">
+<xs:simpleType>
+<xs:restriction base="xs:dateTime"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FellowType">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FellowISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="OldFellowISDN" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="FellowISDNLogDto" type="ns:tFellowISDNLogDto"/>
+<xs:complexType name="tMSISDNUserPwdMOBO">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="UserPwd" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="MSISDNUserPwdMOBO" type="ns:tMSISDNUserPwdMOBO"/>
+<xs:complexType name="tMSISDNUserPwdMOBO2">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="UserPwd" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PartyCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="MSISDNUserPwdMOBO2" type="ns:tMSISDNUserPwdMOBO2"/>
+<xs:complexType name="tModCorporateCustomerReq">
+<xs:sequence>
+<xs:element name="Custcode" type="xs:string"/>
+<xs:element name="CompanyName" nillable="true" type="xs:string"/>
+<xs:element name="CompanyCategory" nillable="true" type="xs:string"/>
+<xs:element name="CertType" nillable="true" type="xs:string"/>
+<xs:element name="CertNbr" nillable="true" type="xs:string"/>
+<xs:element name="Address" nillable="true" type="xs:string"/>
+<xs:element name="RegDate" nillable="true" type="xs:date"/>
+<xs:element name="Fax" nillable="true" type="xs:string"/>
+<xs:element name="ContactInfoDtoList" nillable="true" type="ns:tContactInfoDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ModCorporateCustomerReq" type="ns:tModCorporateCustomerReq"/>
+<xs:complexType name="tModCustReq">
+<xs:sequence>
+<xs:element name="CustCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="200"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Title" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="2"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertType">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertNbr" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Gender" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Birthday" nillable="true" type="xs:date"/>
+<xs:element name="MobileNumber" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustGrade">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:minInclusive value="1"/>
+<xs:maxInclusive value="2"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Address" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PWD" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="10"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Email" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustAttrDtoList" nillable="true" type="ns:tCustAttrDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ModCustReq" type="ns:tModCustReq"/>
+<xs:complexType name="tModFellowISDNBO">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="UserPwd" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FellowISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="18"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="NewFellowISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="18"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FellowType">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ModFellowISDNBO" type="ns:tModFellowISDNBO"/>
+<xs:complexType name="tModUserBasicInforReq">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Address" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Gender" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertType" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertNbr" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Language" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SubsAttrDtoList" nillable="true" type="ns:tSubsAttrDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ModUserBasicInforReq" type="ns:tModUserBasicInforReq"/>
+<xs:complexType name="tSubsAttrDtoList">
+<xs:sequence>
+<xs:element name="SubsAttrDto" nillable="true" type="ns:tSubsAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SubsAttrDtoList" type="ns:tSubsAttrDtoList"/>
+<xs:complexType name="tSubsAttrDto">
+<xs:sequence>
+<xs:element name="AttrCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AttrValue" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="120"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SubsAttrDto" type="ns:tSubsAttrDto"/>
+<xs:complexType name="tModUserBasicInforResp">
+<xs:sequence>
+<xs:element name="ResponseCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ResponseDesc">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ModUserBasicInforResp" type="ns:tModUserBasicInforResp"/>
+<xs:complexType name="tNewConnectionBO">
+<xs:sequence>
+<xs:element name="TransactionSN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SubsPlanCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AcntStopDate" nillable="true" type="xs:date"/>
+<xs:element name="CertType" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="3"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertNbr" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="36"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustomerName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Address" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="120"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="DefLang" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="2"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AccountCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="IMSI" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ICCID" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="UserPwd" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ImpGradeId" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="2"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FirstName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SecondName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Birthday" nillable="true" type="xs:date"/>
+<xs:element name="Province" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="District" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Occupation" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="FatherName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="MotherName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ContactNumber" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Email" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Photo" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="IDPictrue1" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="IDPictrue2" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ServiceDtoList" nillable="true" type="ns:tServiceDto"/>
+<xs:element name="PricePlanDtoList" nillable="true" type="ns:tPricePlanDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NewConnectionBO" type="ns:tNewConnectionBO"/>
+<xs:complexType name="tServiceDto">
+<xs:sequence>
+<xs:element name="ServiceCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ServiceAttrDtoList" nillable="true" type="ns:tServiceAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDto" type="ns:tServiceDto"/>
+<xs:complexType name="tServiceAttrDto">
+<xs:sequence>
+<xs:element name="AttrCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AttrValue" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="120"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceAttrDto" type="ns:tServiceAttrDto"/>
+<xs:complexType name="tPricePlanDto">
+<xs:sequence>
+<xs:element name="PricePlanCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="EffType" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="EffDate" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:dateTime"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ExpDate" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:dateTime"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PricePlanAttrDtoList" nillable="true" type="ns:tPricePlanAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanDto" type="ns:tPricePlanDto"/>
+<xs:complexType name="tPricePlanAttrDto">
+<xs:sequence>
+<xs:element name="AttrCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AttrValue" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="120"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanAttrDto" type="ns:tPricePlanAttrDto"/>
+<xs:complexType name="tNewConnectionBOResponse">
+<xs:sequence>
+<xs:element name="TransactionSN" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ResponseCode" type="xs:string"/>
+<xs:element name="ResponseDesc" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NewConnectionBOResponse" type="ns:tNewConnectionBOResponse"/>
+<xs:complexType name="tNewConnectionReq">
+<xs:sequence>
+<xs:element name="TransactionSN" type="xs:string"/>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="SubsPlanCode" type="xs:string"/>
+<xs:element name="AcntStopDate" nillable="true" type="xs:date"/>
+<xs:element name="CustCode" type="xs:string"/>
+<xs:element name="AccountCode" nillable="true" type="xs:string"/>
+<xs:element name="IMSI" nillable="true" type="xs:string"/>
+<xs:element name="ICCID" nillable="true" type="xs:string"/>
+<xs:element name="UserPwd" nillable="true" type="xs:string"/>
+<xs:element name="ServiceDtoList" nillable="true" type="ns:tServiceDtoList"/>
+<xs:element name="PricePlanDtoList" nillable="true" type="ns:tPricePlanDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NewConnectionReq" type="ns:tNewConnectionReq"/>
+<xs:complexType name="tServiceDtoList">
+<xs:sequence>
+<xs:element name="ServiceDto" nillable="true" type="ns:tServiceDto5"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDtoList" type="ns:tServiceDtoList"/>
+<xs:complexType name="tServiceDto5">
+<xs:sequence>
+<xs:element name="ServiceCode" type="xs:string"/>
+<xs:element name="ServiceAttrDtoList" nillable="true" type="ns:tServiceAttrDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDto5" type="ns:tServiceDto5"/>
+<xs:complexType name="tServiceAttrDtoList">
+<xs:sequence>
+<xs:element name="ServiceAttrDto" type="ns:tServiceAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceAttrDtoList" type="ns:tServiceAttrDtoList"/>
+<xs:complexType name="tPricePlanDtoList">
+<xs:sequence>
+<xs:element name="PricePlanDto" nillable="true" type="ns:tPricePlanDto2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanDtoList" type="ns:tPricePlanDtoList"/>
+<xs:complexType name="tPricePlanDto2">
+<xs:sequence>
+<xs:element name="PricePlanCode" type="xs:string"/>
+<xs:element name="EffType" nillable="true" type="xs:string"/>
+<xs:element name="EffDate" nillable="true" type="xs:dateTime"/>
+<xs:element name="ExpDate" nillable="true" type="xs:dateTime"/>
+<xs:element name="PricePlanAttrDtoList" nillable="true" type="ns:tPricePlanAttrDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanDto2" type="ns:tPricePlanDto2"/>
+<xs:complexType name="tPricePlanAttrDtoList">
+<xs:sequence>
+<xs:element name="PricePlanAttrDto" nillable="true" type="ns:tPricePlanAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanAttrDtoList" type="ns:tPricePlanAttrDtoList"/>
+<xs:complexType name="tNextAvailableTargetsDto">
+<xs:sequence>
+<xs:element name="GoodsCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="GoodsName">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Price">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="15"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="NextAvailableTargetsDto" type="ns:tNextAvailableTargetsDto"/>
+<xs:complexType name="tOrderDto">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PaymentMethod">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="OrderNumber">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="OrderStatus">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Amount">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="12"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="OrderDate">
+<xs:simpleType>
+<xs:restriction base="xs:dateTime"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="50"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PricePlanDtoList" type="ns:tPricePlanDtoRep"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="OrderDto" type="ns:tOrderDto"/>
+<xs:complexType name="tPricePlanDtoRep">
+<xs:sequence>
+<xs:element name="PricePlanCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Action">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanDtoRep" type="ns:tPricePlanDtoRep"/>
+<xs:complexType name="tOrderReasonDto">
+<xs:sequence>
+<xs:element name="SubsEventID" type="xs:string"/>
+<xs:element name="OrderReasonID" type="xs:string"/>
+<xs:element name="OrderReasonName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="OrderReasonDto" type="ns:tOrderReasonDto"/>
+<xs:complexType name="tPricePlanDto1">
+<xs:sequence>
+<xs:element name="PricePlanCode" type="xs:string"/>
+<xs:element name="PricePlanName" type="xs:string"/>
+<xs:element name="CreatedDate" type="xs:date"/>
+<xs:element name="EffDate" type="xs:date"/>
+<xs:element name="ExpDate" nillable="true" type="xs:date"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PricePlanDto1" type="ns:tPricePlanDto1"/>
+<xs:complexType name="tPurchaseBundleBO">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PaymentMethod">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Amount">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="12"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Date">
+<xs:simpleType>
+<xs:restriction base="xs:dateTime"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SN" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="50"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PricePlanDtoList" type="ns:ttPricePlanActionDto"/>
+<xs:element name="PartyCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="50"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PurchaseBundleBO" type="ns:tPurchaseBundleBO"/>
+<xs:complexType name="ttPricePlanActionDto">
+<xs:sequence>
+<xs:element name="PricePlanCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Action">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="EffType">
+<xs:simpleType>
+<xs:restriction base="xs:long">
+<xs:maxInclusive value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="EffDate" nillable="true" type="xs:date"/>
+<xs:element name="ExpDate" nillable="true" type="xs:date"/>
+<xs:element name="PricePlanAttrDtoList" nillable="true" type="ns:ttPricePlanAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="tPricePlanActionDto" type="ns:ttPricePlanActionDto"/>
+<xs:complexType name="ttPricePlanAttrDto">
+<xs:sequence>
+<xs:element name="AttrCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AttrValue" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="tPricePlanAttrDto" type="ns:ttPricePlanAttrDto"/>
+<xs:complexType name="tPurchaseBundleBoResp">
+<xs:sequence>
+<xs:element name="ResponseCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ResponseDesc">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PurchaseBundleBoResp" type="ns:tPurchaseBundleBoResp"/>
+<xs:complexType name="tPurchaseBundleInclSNBO">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PaymentMethod">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Amount">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="12"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Date">
+<xs:simpleType>
+<xs:restriction base="xs:dateTime"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="20"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PricePlanDtoList" type="ns:ttPricePlanActionDto"/>
+<xs:element name="PartyCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="50"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PurchaseBundleInclSNBO" type="ns:tPurchaseBundleInclSNBO"/>
+<xs:complexType name="tPurchaseDIYBundleBO">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PaymentMethod">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Date">
+<xs:simpleType>
+<xs:restriction base="xs:dateTime"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SN" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="50"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PartyCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ComboVoiceValue">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="12"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ComboDataValue">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="12"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ComboSmsValue">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="12"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ComboAmountValue">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="12"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PricePlanDtoList" type="ns:ttPricePlanActionDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PurchaseDIYBundleBO" type="ns:tPurchaseDIYBundleBO"/>
+<xs:complexType name="tQryNextAvailableTargetReq">
+<xs:sequence>
+<xs:element name="MSISDN" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AccountCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QryNextAvailableTargetReq" type="ns:tQryNextAvailableTargetReq"/>
+<xs:complexType name="tQryNextAvailableTargetResp">
+<xs:sequence>
+<xs:element name="NextAvailableTargetsDtoList" nillable="true" type="ns:tNextAvailableTargetsDto"/>
+<xs:element name="Points">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="15"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ExpDate" nillable="true" type="xs:date"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QryNextAvailableTargetResp" type="ns:tQryNextAvailableTargetResp"/>
+<xs:complexType name="tQryProdStateReq">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="UserPwd" nillable="true" type="xs:string"/>
+<xs:element name="ServiceDtoList" type="ns:tServiceDtoList2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QryProdStateReq" type="ns:tQryProdStateReq"/>
+<xs:complexType name="tServiceDtoList2">
+<xs:sequence>
+<xs:element name="ServiceDto" nillable="true" type="ns:tServiceDto1"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDtoList2" type="ns:tServiceDtoList2"/>
+<xs:complexType name="tServiceDto1">
+<xs:sequence>
+<xs:element name="ServiceCode" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDto1" type="ns:tServiceDto1"/>
+<xs:complexType name="tQryProdStateRes">
+<xs:sequence>
+<xs:element name="MSISDN" nillable="true" type="xs:string"/>
+<xs:element name="ServiceDtoList" type="ns:tServiceDtoList3"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QryProdStateRes" type="ns:tQryProdStateRes"/>
+<xs:complexType name="tServiceDtoList3">
+<xs:sequence>
+<xs:element name="ServiceDto" nillable="true" type="ns:tServiceDto2"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDtoList3" type="ns:tServiceDtoList3"/>
+<xs:complexType name="tServiceDto2">
+<xs:sequence>
+<xs:element name="ServiceCode" type="xs:string"/>
+<xs:element name="State" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDto2" type="ns:tServiceDto2"/>
+<xs:complexType name="tQryPurchaseBundleOrderBySNReq">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="50"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QryPurchaseBundleOrderBySNReq" type="ns:tQryPurchaseBundleOrderBySNReq"/>
+<xs:complexType name="tQryPurchaseBundleOrderBySNResponse">
+<xs:sequence>
+<xs:element name="Result">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="OrderDtoList" nillable="true" type="ns:tOrderDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QryPurchaseBundleOrderBySNResponse" type="ns:tQryPurchaseBundleOrderBySNResponse"/>
+<xs:complexType name="tQryRedemptionHisReq">
+<xs:sequence>
+<xs:element name="MSISDN" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AccountCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QryRedemptionHisReq" type="ns:tQryRedemptionHisReq"/>
+<xs:complexType name="tQryRedemptionHisResp">
+<xs:sequence>
+<xs:element name="RedemptionGoodsHisDtoList" nillable="true" type="ns:tRedemptionGoodsHisDtoList"/>
+<xs:element name="RedemptionBalHisDtoList" type="ns:tRedemptionBalHisDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QryRedemptionHisResp" type="ns:tQryRedemptionHisResp"/>
+<xs:complexType name="tRedemptionGoodsHisDtoList">
+<xs:sequence>
+<xs:element name="OrderNumber">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="MSISDN" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AccountCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="RedeemDate" type="xs:date"/>
+<xs:element name="State">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="GoodsCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="GoodsName">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="SerialNumber" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Price">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="15"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Channel">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Location" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ShopName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RedemptionGoodsHisDtoList" type="ns:tRedemptionGoodsHisDtoList"/>
+<xs:complexType name="tRedemptionBalHisDtoList">
+<xs:sequence>
+<xs:element name="AccountCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AcctResCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="30"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="AcctResName">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="RedeemDate" type="xs:date"/>
+<xs:element name="BalBefore">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="15"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Balance">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="15"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Price">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="15"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RedemptionBalHisDtoList" type="ns:tRedemptionBalHisDtoList"/>
+<xs:complexType name="tQueryFellowISDNLogBO">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="UserPwd" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QueryFellowISDNLogBO" type="ns:tQueryFellowISDNLogBO"/>
+<xs:complexType name="tQueryFellowISDNLogBOResponse">
+<xs:sequence>
+<xs:element name="FellowISDNLogDtoList" type="ns:tFellowISDNLogDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QueryFellowISDNLogBOResponse" type="ns:tQueryFellowISDNLogBOResponse"/>
+<xs:complexType name="tQueryFellowISDNReq">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="UserPwd" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QueryFellowISDNReq" type="ns:tQueryFellowISDNReq"/>
+<xs:complexType name="tQueryFellowISDNRes">
+<xs:sequence>
+<xs:element name="FellowISDNDtoList" type="ns:tFellowISDNDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QueryFellowISDNRes" type="ns:tQueryFellowISDNRes"/>
+<xs:complexType name="tQueryOrderReasonReq">
+<xs:sequence>
+<xs:element name="SubsEventID" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QueryOrderReasonReq" type="ns:tQueryOrderReasonReq"/>
+<xs:complexType name="tQueryOrderReasonRsp">
+<xs:sequence>
+<xs:element name="OrderReasonDtoList" nillable="true" type="ns:tOrderReasonDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QueryOrderReasonRsp" type="ns:tQueryOrderReasonRsp"/>
+<xs:complexType name="tQuerySIMDetailsReq">
+<xs:sequence>
+<xs:element name="ICCID" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="IMSI" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QuerySIMDetailsReq" type="ns:tQuerySIMDetailsReq"/>
+<xs:complexType name="tQuerySIMDetailsResp">
+<xs:sequence>
+<xs:element name="MSISDN" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ICCID" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="IMSI" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="DateActivated" type="xs:date"/>
+<xs:element name="DateUploaded" nillable="true" type="xs:date"/>
+<xs:element name="State" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PIN1" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PIN2" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PUK1" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PUK2" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ResponseCode" nillable="true" type="xs:string"/>
+<xs:element name="ResponseDesc" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QuerySIMDetailsResp" type="ns:tQuerySIMDetailsResp"/>
+<xs:complexType name="tQueryUserProfileReq">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="UserPwd" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QueryUserProfileReq" type="ns:tQueryUserProfileReq"/>
+<xs:complexType name="tQueryUserProfileRsp">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="AcntStopDate" nillable="true" type="xs:date"/>
+<xs:element name="CompletedDate" type="xs:date"/>
+<xs:element name="CertType" nillable="true" type="xs:string"/>
+<xs:element name="CertNbr" nillable="true" type="xs:string"/>
+<xs:element name="CustType" nillable="true" type="xs:string"/>
+<xs:element name="CustName" nillable="true" type="xs:string"/>
+<xs:element name="CustCode" nillable="true" type="xs:string"/>
+<xs:element name="Nationality" nillable="true" type="xs:string"/>
+<xs:element name="Title" nillable="true" type="xs:string"/>
+<xs:element name="Gender" nillable="true" type="xs:string"/>
+<xs:element name="Birthday" nillable="true" type="xs:date"/>
+<xs:element name="MobileNumber" nillable="true" type="xs:string"/>
+<xs:element name="RegNumber" nillable="true" type="xs:string"/>
+<xs:element name="CustGrade" nillable="true" type="xs:string"/>
+<xs:element name="CustState" nillable="true" type="xs:string"/>
+<xs:element name="Address" nillable="true" type="xs:string"/>
+<xs:element name="DefLang" nillable="true" type="xs:string"/>
+<xs:element name="Province" nillable="true" type="xs:string"/>
+<xs:element name="District" nillable="true" type="xs:string"/>
+<xs:element name="Suburb" nillable="true" type="xs:string"/>
+<xs:element name="PostAddress" nillable="true" type="xs:string"/>
+<xs:element name="Email" nillable="true" type="xs:string"/>
+<xs:element name="AccountCode" nillable="true" type="xs:string"/>
+<xs:element name="PostPaidFlag" nillable="true" type="xs:string"/>
+<xs:element name="BillingCycleTypeCode" nillable="true" type="xs:string"/>
+<xs:element name="SubsPlanCode" type="xs:string"/>
+<xs:element name="SubsPlanName" type="xs:string"/>
+<xs:element name="IMSI" type="xs:string"/>
+<xs:element name="ICCID" type="xs:string"/>
+<xs:element name="SubsState" type="xs:string"/>
+<xs:element name="StateSet" type="xs:string"/>
+<xs:element name="CreditLimit" nillable="true" type="xs:string"/>
+<xs:element name="SubsID" type="xs:string"/>
+<xs:element name="Balance" type="xs:long"/>
+<xs:element name="EffDate" nillable="true" type="xs:date"/>
+<xs:element name="ExpDate" nillable="true" type="xs:date"/>
+<xs:element name="ServiceDtoList" nillable="true" type="ns:tServiceDto4"/>
+<xs:element name="PricePlanDtoList" nillable="true" type="ns:tPricePlanDto1"/>
+<xs:element name="FellowISDNDtoList" nillable="true" type="ns:tFellowISDNDto"/>
+<xs:element name="City" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="QueryUserProfileRsp" type="ns:tQueryUserProfileRsp"/>
+<xs:complexType name="tServiceDto4">
+<xs:sequence>
+<xs:element name="ServiceCode" type="xs:string"/>
+<xs:element name="ServiceName" type="xs:string"/>
+<xs:element name="CompletedDate" type="xs:date"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDto4" type="ns:tServiceDto4"/>
+<xs:complexType name="tRequestBO">
+<xs:sequence/>
+</xs:complexType>
+<xs:element name="RequestBO" type="ns:tRequestBO"/>
+<xs:complexType name="tRespBO">
+<xs:sequence>
+<xs:element name="ResponseCode" type="xs:string"/>
+<xs:element name="ResponseDesc" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="RespBO" type="ns:tRespBO"/>
+<xs:complexType name="tResponseBO">
+<xs:sequence>
+<xs:element name="ResponseCode" type="xs:string"/>
+<xs:element name="ResponseDesc" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ResponseBO" type="ns:tResponseBO"/>
+<xs:complexType name="tServiceDto3">
+<xs:sequence>
+<xs:element name="ServiceCode" type="xs:string"/>
+<xs:element name="Action" type="xs:long"/>
+<xs:element name="ServiceAttrDtoList" nillable="true" type="ns:tServiceAttrDtoList"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDto3" type="ns:tServiceDto3"/>
+<xs:complexType name="tServiceDtoList1">
+<xs:sequence>
+<xs:element name="ServiceDto" nillable="true" type="ns:tServiceDto3"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ServiceDtoList1" type="ns:tServiceDtoList1"/>
+<xs:complexType name="tSetIPP4UserBO">
+<xs:sequence>
+<xs:element name="MSISDN">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="UserPwd">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PricePlanDtoList" type="ns:tPricePlanActionDto"/>
+<xs:element name="TransactionSN" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SetIPP4UserBO" type="ns:tSetIPP4UserBO"/>
+<xs:complexType name="tSetIPP4UserBoResponse">
+<xs:sequence>
+<xs:element name="TransactionSN" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SetIPP4UserBoResponse" type="ns:tSetIPP4UserBoResponse"/>
+<xs:complexType name="tSetServiceReq">
+<xs:sequence>
+<xs:element name="MSISDN" type="xs:string"/>
+<xs:element name="UserPwd" nillable="true" type="xs:string"/>
+<xs:element name="ServiceDtoList" type="ns:tServiceDtoList1"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SetServiceReq" type="ns:tSetServiceReq"/>
+<xs:complexType name="tSetServiceResp">
+<xs:sequence>
+<xs:element name="ResponseCode" type="xs:string"/>
+<xs:element name="ResponseDesc" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SetServiceResp" type="ns:tSetServiceResp"/>
+<xs:complexType name="tUserProfileReq">
+<xs:sequence>
+<xs:element name="CustCode">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="UserProfileReq" type="ns:tUserProfileReq"/>
+<xs:complexType name="tUserProfileResp">
+<xs:sequence>
+<xs:element name="CustCode" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertType" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="3"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CertNbr" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustType" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustName" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Nationality" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Title" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="20"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Gender" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Birthday" nillable="true" type="xs:date"/>
+<xs:element name="MobileNumber" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="RegNumber" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustGrade" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="CustState" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Address" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="255"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Province" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="City" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="District" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Suburb" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="PostAddress" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="120"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="Email" nillable="true">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+<xs:maxLength value="60"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="UserProfileResp" type="ns:tUserProfileResp"/>
+<xs:complexType name="tZimbEconetCreateCustReq">
+<xs:sequence>
+<xs:element name="CustCode" type="xs:string"/>
+<xs:element name="FirstName" type="xs:string"/>
+<xs:element name="SurName" type="xs:string"/>
+<xs:element name="Nationality" type="xs:string"/>
+<xs:element name="Title" type="xs:string"/>
+<xs:element name="CertType" type="xs:string"/>
+<xs:element name="CertNbr" type="xs:string"/>
+<xs:element name="Gender" type="xs:string"/>
+<xs:element name="Birthday" type="xs:date"/>
+<xs:element name="MobileNumber" type="xs:string"/>
+<xs:element name="RegNumber" type="xs:string"/>
+<xs:element name="CustGrade" type="xs:string"/>
+<xs:element name="Address" type="xs:string"/>
+<xs:element name="PWD" nillable="true" type="xs:string"/>
+<xs:element name="MaxLines" nillable="true" type="xs:string"/>
+<xs:element name="State" type="xs:string"/>
+<xs:element name="CustAttrDtoList" nillable="true" type="ns:tCustAttrDto"/>
+<xs:element name="AccountCode" nillable="true" type="xs:string"/>
+<xs:element name="PostPaidFlag" nillable="true" type="xs:string"/>
+<xs:element name="BillingCycleTypeCode" nillable="true" type="xs:string"/>
+<xs:element name="AccountPayFlag" nillable="true" type="xs:string"/>
+<xs:element name="Province" nillable="true" type="xs:string"/>
+<xs:element name="City" nillable="true" type="xs:string"/>
+<xs:element name="District" nillable="true" type="xs:string"/>
+<xs:element name="Suburb" nillable="true" type="xs:string"/>
+<xs:element name="PostAddress" nillable="true" type="xs:string"/>
+<xs:element name="Email" nillable="true" type="xs:string"/>
+<xs:element name="ParentCustCode" nillable="true" type="xs:string"/>
+<xs:element name="AcctAttrDtoList" nillable="true" type="ns:tAcctAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ZimbEconetCreateCustReq" type="ns:tZimbEconetCreateCustReq"/>
+<xs:complexType name="tZimbEconetModifyCustReq">
+<xs:sequence>
+<xs:element name="CustCode" type="xs:string"/>
+<xs:element name="SurName" nillable="true" type="xs:string"/>
+<xs:element name="FirstName" nillable="true" type="xs:string"/>
+<xs:element name="Nationality" nillable="true" type="xs:string"/>
+<xs:element name="Title" nillable="true" type="xs:string"/>
+<xs:element name="CertType" nillable="true" type="xs:string"/>
+<xs:element name="CertNbr" nillable="true" type="xs:string"/>
+<xs:element name="Gender" nillable="true" type="xs:string"/>
+<xs:element name="Birthday" nillable="true" type="xs:string"/>
+<xs:element name="MobileNumber" nillable="true" type="xs:string"/>
+<xs:element name="RegNumber" nillable="true" type="xs:string"/>
+<xs:element name="CustGrade" nillable="true" type="xs:string"/>
+<xs:element name="Address" nillable="true" type="xs:string"/>
+<xs:element name="PWD" nillable="true" type="xs:string"/>
+<xs:element name="MaxLines" nillable="true" type="xs:string"/>
+<xs:element name="Province" nillable="true" type="xs:string"/>
+<xs:element name="City" nillable="true" type="xs:string"/>
+<xs:element name="District" nillable="true" type="xs:string"/>
+<xs:element name="Suburb" nillable="true" type="xs:string"/>
+<xs:element name="PostAddress" nillable="true" type="xs:string"/>
+<xs:element name="Email" nillable="true" type="xs:string"/>
+<xs:element name="CustAttrDtoList" nillable="true" type="ns:tCustAttrDto"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ZimbEconetModifyCustReq" type="ns:tZimbEconetModifyCustReq"/>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="OneWayReact4PeccancyRequest">
+<wsdl:part name="parameters" element="ns:MSISDNUserPwdMOBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="OneWayReact4PeccancyResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="QryPurchaseBundleOrderBySNRequest">
+<wsdl:part name="parameters" element="ns:QryPurchaseBundleOrderBySNReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QryPurchaseBundleOrderBySNResponse">
+<wsdl:part name="parameters" element="ns:QryPurchaseBundleOrderBySNResponse"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="ReactivationUnderReqRequest">
+<wsdl:part name="parameters" element="ns:MSISDNUserPwdMOBO2"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="ReactivationUnderReqResponse">
+<wsdl:part name="parameters" element="ns:ResponseBO"/>
+</wsdl:message>
+<wsdl:message name="QueryUserProfilebyCustCodeRequest">
+<wsdl:part name="parameters" element="ns:UserProfileReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QueryUserProfilebyCustCodeResponse">
+<wsdl:part name="parameters" element="ns:UserProfileResp"/>
+</wsdl:message>
+<wsdl:message name="ModUserBasicInforRequest">
+<wsdl:part name="parameters" element="ns:ModUserBasicInforReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="ModUserBasicInforResponse">
+<wsdl:part name="parameters" element="ns:ModUserBasicInforResp"/>
+</wsdl:message>
+<wsdl:message name="QryNextAvailableTargetRequest">
+<wsdl:part name="parameters" element="ns:QryNextAvailableTargetReq"/>
+<wsdl:part name="AuthHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QryNextAvailableTargetResponse">
+<wsdl:part name="parameters" element="ns:QryNextAvailableTargetResp"/>
+</wsdl:message>
+<wsdl:message name="QueryFellowISDNLogRequest">
+<wsdl:part name="parameters" element="ns:QueryFellowISDNLogBO"/>
+<wsdl:part name="AuthHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QueryFellowISDNLogResponse">
+<wsdl:part name="parameters" element="ns:QueryFellowISDNLogBOResponse"/>
+</wsdl:message>
+<wsdl:message name="SuspensionUnderReqRequest">
+<wsdl:part name="parameters" element="ns:MSISDNUserPwdMOBO2"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="SuspensionUnderReqResponse">
+<wsdl:part name="parameters" element="ns:ResponseBO"/>
+</wsdl:message>
+<wsdl:message name="ModCustStateRequest">
+<wsdl:part name="parameters" element="ns:CustStateBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="ModCustStateResponse">
+<wsdl:part name="parameters" element="ns:CustStateRep"/>
+</wsdl:message>
+<wsdl:message name="QryRedemptionHisRequest">
+<wsdl:part name="parameters" element="ns:QryRedemptionHisReq"/>
+<wsdl:part name="AuthHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QryRedemptionHisResponse">
+<wsdl:part name="parameters" element="ns:QryRedemptionHisResp"/>
+</wsdl:message>
+<wsdl:message name="SetIPP4UserRequest">
+<wsdl:part name="parameters" element="ns:SetIPP4UserBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="SetIPP4UserResponse">
+<wsdl:part name="parameters" element="ns:SetIPP4UserBoResponse"/>
+</wsdl:message>
+<wsdl:message name="PurchaseBundleInclSNRequest">
+<wsdl:part name="parameters" element="ns:PurchaseBundleInclSNBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="PurchaseBundleInclSNResponse">
+<wsdl:part name="parameters" element="ns:PurchaseBundleBoResp"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="CreateCustomerRequest">
+<wsdl:part name="parameters" element="ns:CreateCustomerReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="CreateCustomerResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="RestoreRequest">
+<wsdl:part name="parameters" element="ns:MSISDNUserPwdMOBO2"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="RestoreResponse">
+<wsdl:part name="parameters" element="ns:ResponseBO"/>
+</wsdl:message>
+<wsdl:message name="ModCustomerRequest">
+<wsdl:part name="parameters" element="ns:ModCustReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="ModCustomerResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="CreateCustomer4EconetLeoRequest">
+<wsdl:part name="parameters" element="ns:CreateCustReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="CreateCustomer4EconetLeoResponse">
+<wsdl:part name="parameters" element="ns:ResponseBO"/>
+</wsdl:message>
+<wsdl:message name="QueryOrderReasonRequest">
+<wsdl:part name="parameters" element="ns:QueryOrderReasonReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QueryOrderReasonResponse">
+<wsdl:part name="parameters" element="ns:QueryOrderReasonRsp"/>
+</wsdl:message>
+<wsdl:message name="PurchaseDIYBundleRequest">
+<wsdl:part name="parameters" element="ns:PurchaseDIYBundleBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="PurchaseDIYBundleResponse">
+<wsdl:part name="parameters" element="ns:PurchaseBundleBoResp"/>
+</wsdl:message>
+<wsdl:message name="NewConnectionRequest">
+<wsdl:part name="parameters" element="ns:NewConnectionReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="NewConnectionResponse">
+<wsdl:part name="parameters" element="ns:NewConnectionBOResponse"/>
+</wsdl:message>
+<wsdl:message name="SetServiceRequest">
+<wsdl:part name="parameters" element="ns:SetServiceReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="SetServiceResponse">
+<wsdl:part name="parameters" element="ns:SetServiceResp"/>
+</wsdl:message>
+<wsdl:message name="QueryUserProfileRequest">
+<wsdl:part name="parameters" element="ns:QueryUserProfileReq"/>
+<wsdl:part name="AuthHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QueryUserProfileResponse">
+<wsdl:part name="parameters" element="ns:QueryUserProfileRsp"/>
+</wsdl:message>
+<wsdl:message name="DuplicateSIMCardRequest">
+<wsdl:part name="parameters" element="ns:DuplicateSIMCardReq2"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="DuplicateSIMCardResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="ActExtVPNRequest">
+<wsdl:part name="parameters" element="ns:ActExtVPNReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="ActExtVPNResponse">
+<wsdl:part name="parameters" element="ns:ActExtVPNResponse"/>
+</wsdl:message>
+<wsdl:message name="PurchaseBundleRequest">
+<wsdl:part name="parameters" element="ns:PurchaseBundleBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="PurchaseBundleResponse">
+<wsdl:part name="parameters" element="ns:PurchaseBundleBoResp"/>
+</wsdl:message>
+<wsdl:message name="ModCorporateCustomerRequest">
+<wsdl:part name="parameters" element="ns:ModCorporateCustomerReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="ModCorporateCustomerResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="QueryFellowISDNRequest">
+<wsdl:part name="parameters" element="ns:QueryFellowISDNReq"/>
+<wsdl:part name="AuthHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QueryFellowISDNResponse">
+<wsdl:part name="parameters" element="ns:QueryFellowISDNRes"/>
+</wsdl:message>
+<wsdl:message name="QryServiceRequest">
+<wsdl:part name="parameters" element="ns:QryProdStateReq"/>
+<wsdl:part name="AuthHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QryServiceResponse">
+<wsdl:part name="parameters" element="ns:QryProdStateRes"/>
+</wsdl:message>
+<wsdl:message name="DeActivatePromotionRequest">
+<wsdl:part name="parameters" element="ns:DeActivatePromotionReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="DeActivatePromotionResponse">
+<wsdl:part name="parameters" element="ns:ResponseBO"/>
+</wsdl:message>
+<wsdl:message name="DelFellowISDN4EconetRequest">
+<wsdl:part name="parameters" element="ns:DelFellowISDNBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="DelFellowISDN4EconetResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="OneWayBlock4PeccancyRequest">
+<wsdl:part name="parameters" element="ns:MSISDNUserPwdMOBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="OneWayBlock4PeccancyResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="QuerySIMDetailsRequest">
+<wsdl:part name="parameters" element="ns:QuerySIMDetailsReq"/>
+<wsdl:part name="AuthHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QuerySIMDetailsResponse">
+<wsdl:part name="parameters" element="ns:QuerySIMDetailsResp"/>
+</wsdl:message>
+<wsdl:message name="AddFellowISDN4EconetRequest">
+<wsdl:part name="parameters" element="ns:AddFellowISDNBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="AddFellowISDN4EconetResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="QueryCustInfoRequest">
+<wsdl:part name="parameters" element="ns:CustReq"/>
+<wsdl:part name="AuthHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="QueryCustInfoResponse">
+<wsdl:part name="parameters" element="ns:CustInfoDto"/>
+</wsdl:message>
+<wsdl:message name="CreateCorporateCustomerRequest">
+<wsdl:part name="parameters" element="ns:CreateCorporateCustomerReq"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="CreateCorporateCustomerResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="ModFellowISDN4EconetRequest">
+<wsdl:part name="parameters" element="ns:ModFellowISDNBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="ModFellowISDN4EconetResponse">
+<wsdl:part name="parameters" element="ns:RespBO"/>
+</wsdl:message>
+<wsdl:message name="NewConnection4EconetLeoRequest">
+<wsdl:part name="parameters" element="ns:NewConnectionBO"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="NewConnection4EconetLeoResponse">
+<wsdl:part name="parameters" element="ns:NewConnectionBOResponse"/>
+</wsdl:message>
+<wsdl:message name="LostRequest">
+<wsdl:part name="parameters" element="ns:MSISDNUserPwdMOBO2"/>
+<wsdl:part name="authHeader" element="ns:AuthHeader"/>
+</wsdl:message>
+<wsdl:message name="LostResponse">
+<wsdl:part name="parameters" element="ns:ResponseBO"/>
+</wsdl:message>
+<wsdl:portType name="WebservicePortType">
+<wsdl:operation name="OneWayReact4Peccancy">
+<wsdl:input message="tns:OneWayReact4PeccancyRequest" wsaw:Action="urn:OneWayReact4Peccancy"/>
+<wsdl:output message="tns:OneWayReact4PeccancyResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="QryPurchaseBundleOrderBySN">
+<wsdl:input message="tns:QryPurchaseBundleOrderBySNRequest" wsaw:Action="urn:QryPurchaseBundleOrderBySN"/>
+<wsdl:output message="tns:QryPurchaseBundleOrderBySNResponse" wsaw:Action="urn:QryPurchaseBundleOrderBySNResponse"/>
+</wsdl:operation>
+<wsdl:operation name="ReactivationUnderReq">
+<wsdl:input message="tns:ReactivationUnderReqRequest" wsaw:Action="urn:ReactivationUnderReq"/>
+<wsdl:output message="tns:ReactivationUnderReqResponse" wsaw:Action="urn:ResponseBO"/>
+</wsdl:operation>
+<wsdl:operation name="QueryUserProfilebyCustCode">
+<wsdl:input message="tns:QueryUserProfilebyCustCodeRequest" wsaw:Action="urn:QueryUserProfilebyCustCode"/>
+<wsdl:output message="tns:QueryUserProfilebyCustCodeResponse" wsaw:Action="urn:UserProfileResp"/>
+</wsdl:operation>
+<wsdl:operation name="ModUserBasicInfor">
+<wsdl:input message="tns:ModUserBasicInforRequest" wsaw:Action="urn:ModUserBasicInfor"/>
+<wsdl:output message="tns:ModUserBasicInforResponse" wsaw:Action="urn:ModUserBasicInforResp"/>
+</wsdl:operation>
+<wsdl:operation name="QryNextAvailableTarget">
+<wsdl:input message="tns:QryNextAvailableTargetRequest" wsaw:Action="urn:QryNextAvailableTarget"/>
+<wsdl:output message="tns:QryNextAvailableTargetResponse" wsaw:Action="urn:QryNextAvailableTargetResp"/>
+</wsdl:operation>
+<wsdl:operation name="QueryFellowISDNLog">
+<wsdl:input message="tns:QueryFellowISDNLogRequest" wsaw:Action="urn:QueryFellowISDNLog"/>
+<wsdl:output message="tns:QueryFellowISDNLogResponse" wsaw:Action="urn:QueryFellowISDNLogBOResponse"/>
+</wsdl:operation>
+<wsdl:operation name="SuspensionUnderReq">
+<wsdl:input message="tns:SuspensionUnderReqRequest" wsaw:Action="urn:SuspensionUnderReq"/>
+<wsdl:output message="tns:SuspensionUnderReqResponse" wsaw:Action="urn:ResponseBO"/>
+</wsdl:operation>
+<wsdl:operation name="ModCustState">
+<wsdl:input message="tns:ModCustStateRequest" wsaw:Action="urn:ModCustState"/>
+<wsdl:output message="tns:ModCustStateResponse" wsaw:Action="urn:CustStateRep"/>
+</wsdl:operation>
+<wsdl:operation name="QryRedemptionHis">
+<wsdl:input message="tns:QryRedemptionHisRequest" wsaw:Action="urn:QryRedemptionHis"/>
+<wsdl:output message="tns:QryRedemptionHisResponse" wsaw:Action="urn:QryRedemptionHisResp"/>
+</wsdl:operation>
+<wsdl:operation name="SetIPP4User">
+<wsdl:input message="tns:SetIPP4UserRequest" wsaw:Action="urn:SetIPP4User"/>
+<wsdl:output message="tns:SetIPP4UserResponse" wsaw:Action="urn:SetIPP4UserBoResponse"/>
+</wsdl:operation>
+<wsdl:operation name="PurchaseBundleInclSN">
+<wsdl:input message="tns:PurchaseBundleInclSNRequest" wsaw:Action="urn:PurchaseBundleInclSN"/>
+<wsdl:output message="tns:PurchaseBundleInclSNResponse" wsaw:Action="urn:PurchaseBundleBoResp"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCustomer">
+<wsdl:input message="tns:CreateCustomerRequest" wsaw:Action="urn:CreateCustomer"/>
+<wsdl:output message="tns:CreateCustomerResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="Restore">
+<wsdl:input message="tns:RestoreRequest" wsaw:Action="urn:Restore"/>
+<wsdl:output message="tns:RestoreResponse" wsaw:Action="urn:ResponseBO"/>
+</wsdl:operation>
+<wsdl:operation name="ModCustomer">
+<wsdl:input message="tns:ModCustomerRequest" wsaw:Action="urn:ModCustomer"/>
+<wsdl:output message="tns:ModCustomerResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCustomer4EconetLeo">
+<wsdl:input message="tns:CreateCustomer4EconetLeoRequest" wsaw:Action="urn:CreateCustomer4EconetLeo"/>
+<wsdl:output message="tns:CreateCustomer4EconetLeoResponse" wsaw:Action="urn:ResponseBO"/>
+</wsdl:operation>
+<wsdl:operation name="QueryOrderReason">
+<wsdl:input message="tns:QueryOrderReasonRequest" wsaw:Action="urn:QueryOrderReason"/>
+<wsdl:output message="tns:QueryOrderReasonResponse" wsaw:Action="urn:QueryOrderReasonRsp"/>
+</wsdl:operation>
+<wsdl:operation name="PurchaseDIYBundle">
+<wsdl:input message="tns:PurchaseDIYBundleRequest" wsaw:Action="urn:PurchaseDIYBundle"/>
+<wsdl:output message="tns:PurchaseDIYBundleResponse" wsaw:Action="urn:PurchaseBundleBoResp"/>
+</wsdl:operation>
+<wsdl:operation name="NewConnection">
+<wsdl:input message="tns:NewConnectionRequest" wsaw:Action="urn:NewConnection"/>
+<wsdl:output message="tns:NewConnectionResponse" wsaw:Action="urn:NewConnectionBOResponse"/>
+</wsdl:operation>
+<wsdl:operation name="SetService">
+<wsdl:input message="tns:SetServiceRequest" wsaw:Action="urn:SetService"/>
+<wsdl:output message="tns:SetServiceResponse" wsaw:Action="urn:SetServiceResp"/>
+</wsdl:operation>
+<wsdl:operation name="QueryUserProfile">
+<wsdl:input message="tns:QueryUserProfileRequest" wsaw:Action="urn:QueryUserProfile"/>
+<wsdl:output message="tns:QueryUserProfileResponse" wsaw:Action="urn:QueryUserProfileRsp"/>
+</wsdl:operation>
+<wsdl:operation name="DuplicateSIMCard">
+<wsdl:input message="tns:DuplicateSIMCardRequest" wsaw:Action="urn:DuplicateSIMCard"/>
+<wsdl:output message="tns:DuplicateSIMCardResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="ActExtVPN">
+<wsdl:input message="tns:ActExtVPNRequest" wsaw:Action="urn:ActExtVPN"/>
+<wsdl:output message="tns:ActExtVPNResponse" wsaw:Action="urn:ActExtVPNResponse"/>
+</wsdl:operation>
+<wsdl:operation name="PurchaseBundle">
+<wsdl:input message="tns:PurchaseBundleRequest" wsaw:Action="urn:PurchaseBundle"/>
+<wsdl:output message="tns:PurchaseBundleResponse" wsaw:Action="urn:PurchaseBundleBoResp"/>
+</wsdl:operation>
+<wsdl:operation name="ModCorporateCustomer">
+<wsdl:input message="tns:ModCorporateCustomerRequest" wsaw:Action="urn:ModCorporateCustomer"/>
+<wsdl:output message="tns:ModCorporateCustomerResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="QueryFellowISDN">
+<wsdl:input message="tns:QueryFellowISDNRequest" wsaw:Action="urn:QueryFellowISDN"/>
+<wsdl:output message="tns:QueryFellowISDNResponse" wsaw:Action="urn:QueryFellowISDNRes"/>
+</wsdl:operation>
+<wsdl:operation name="QryService">
+<wsdl:input message="tns:QryServiceRequest" wsaw:Action="urn:QryService"/>
+<wsdl:output message="tns:QryServiceResponse" wsaw:Action="urn:QryProdStateRes"/>
+</wsdl:operation>
+<wsdl:operation name="DeActivatePromotion">
+<wsdl:input message="tns:DeActivatePromotionRequest" wsaw:Action="urn:DeActivatePromotion"/>
+<wsdl:output message="tns:DeActivatePromotionResponse" wsaw:Action="urn:ResponseBO"/>
+</wsdl:operation>
+<wsdl:operation name="DelFellowISDN4Econet">
+<wsdl:input message="tns:DelFellowISDN4EconetRequest" wsaw:Action="urn:DelFellowISDN"/>
+<wsdl:output message="tns:DelFellowISDN4EconetResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="OneWayBlock4Peccancy">
+<wsdl:input message="tns:OneWayBlock4PeccancyRequest" wsaw:Action="urn:OneWayBlock4Peccancy"/>
+<wsdl:output message="tns:OneWayBlock4PeccancyResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="QuerySIMDetails">
+<wsdl:input message="tns:QuerySIMDetailsRequest" wsaw:Action="urn:QuerySIMDetails"/>
+<wsdl:output message="tns:QuerySIMDetailsResponse" wsaw:Action="urn:QuerySIMDetailsResp"/>
+</wsdl:operation>
+<wsdl:operation name="AddFellowISDN4Econet">
+<wsdl:input message="tns:AddFellowISDN4EconetRequest" wsaw:Action="urn:AddFellowISDN4Econet"/>
+<wsdl:output message="tns:AddFellowISDN4EconetResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="QueryCustInfo">
+<wsdl:input message="tns:QueryCustInfoRequest" wsaw:Action="urn:QueryCustInfo"/>
+<wsdl:output message="tns:QueryCustInfoResponse" wsaw:Action="urn:CustInfoDto"/>
+</wsdl:operation>
+<wsdl:operation name="CreateCorporateCustomer">
+<wsdl:input message="tns:CreateCorporateCustomerRequest" wsaw:Action="urn:CreateCorporateCustomer"/>
+<wsdl:output message="tns:CreateCorporateCustomerResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="ModFellowISDN4Econet">
+<wsdl:input message="tns:ModFellowISDN4EconetRequest" wsaw:Action="urn:ModFellowISDN4Econet"/>
+<wsdl:output message="tns:ModFellowISDN4EconetResponse" wsaw:Action="urn:RespBO"/>
+</wsdl:operation>
+<wsdl:operation name="NewConnection4EconetLeo">
+<wsdl:input message="tns:NewConnection4EconetLeoRequest" wsaw:Action="urn:NewConnection4EconetLeo"/>
+<wsdl:output message="tns:NewConnection4EconetLeoResponse" wsaw:Action="urn:NewConnectionBOResponse"/>
+</wsdl:operation>
+<wsdl:operation name="Lost">
+<wsdl:input message="tns:LostRequest" wsaw:Action="urn:Lost"/>
+<wsdl:output message="tns:LostResponse" wsaw:Action="urn:ResponseBO"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="WebserviceSoap11Binding" type="tns:WebservicePortType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="OneWayReact4Peccancy">
+<soap:operation soapAction="urn:OneWayReact4Peccancy" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:OneWayReact4PeccancyRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryPurchaseBundleOrderBySN">
+<soap:operation soapAction="urn:QryPurchaseBundleOrderBySN" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:QryPurchaseBundleOrderBySNRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+<soap12:header use="literal" part="authHeader" message="tns:QryPurchaseBundleOrderBySNResponse"/>
+<soap12:header use="literal" part="authHeader" message="tns:QryPurchaseBundleOrderBySNResponse"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ReactivationUnderReq">
+<soap:operation soapAction="urn:ReactivationUnderReq" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ReactivationUnderReqRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryUserProfilebyCustCode">
+<soap:operation soapAction="urn:QueryUserProfilebyCustCode" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:QueryUserProfilebyCustCodeRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModUserBasicInfor">
+<soap:operation soapAction="urn:ModUserBasicInfor" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModUserBasicInforRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryNextAvailableTarget">
+<soap:operation soapAction="urn:QryNextAvailableTarget" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QryNextAvailableTargetRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryFellowISDNLog">
+<soap:operation soapAction="urn:QueryFellowISDNLog" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QueryFellowISDNLogRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SuspensionUnderReq">
+<soap:operation soapAction="urn:SuspensionUnderReq" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:SuspensionUnderReqRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCustState">
+<soap:operation soapAction="urn:ModCustState" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModCustStateRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryRedemptionHis">
+<soap:operation soapAction="urn:QryRedemptionHis" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QryRedemptionHisRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetIPP4User">
+<soap:operation soapAction="urn:SetIPP4User" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:SetIPP4UserRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseBundleInclSN">
+<soap:operation soapAction="urn:PurchaseBundleInclSN" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseBundleInclSNRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseBundleInclSNResponse"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseBundleInclSNResponse"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCustomer">
+<soap:operation soapAction="urn:CreateCustomer" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:CreateCustomerRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCustomer">
+<soap:operation soapAction="urn:ModCustomer" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModCustomerRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Restore">
+<soap:operation soapAction="urn:Restore" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:RestoreRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCustomer4EconetLeo">
+<soap:operation soapAction="urn:CreateCustomer4EconetLeo" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:CreateCustomer4EconetLeoRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryOrderReason">
+<soap:operation soapAction="urn:QueryOrderReason" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:QueryOrderReasonRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseDIYBundle">
+<soap:operation soapAction="urn:PurchaseDIYBundle" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseDIYBundleRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NewConnection">
+<soap:operation soapAction="urn:NewConnection" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:NewConnectionRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetService">
+<soap:operation soapAction="urn:SetService" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:SetServiceRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryUserProfile">
+<soap:operation soapAction="urn:QueryUserProfile" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QueryUserProfileRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DuplicateSIMCard">
+<soap:operation soapAction="urn:DuplicateSIMCard" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:DuplicateSIMCardRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ActExtVPN">
+<soap:operation soapAction="urn:ActExtVPN" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ActExtVPNRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseBundle">
+<soap:operation soapAction="urn:PurchaseBundle" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseBundleRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCorporateCustomer">
+<soap:operation soapAction="urn:ModCorporateCustomer" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModCorporateCustomerRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryService">
+<soap:operation soapAction="urn:QryService" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QryServiceRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryFellowISDN">
+<soap:operation soapAction="urn:QueryFellowISDN" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QueryFellowISDNRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeActivatePromotion">
+<soap:operation soapAction="urn:DeActivatePromotion" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:DeActivatePromotionRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DelFellowISDN4Econet">
+<soap:operation soapAction="urn:DelFellowISDN" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:DelFellowISDN4EconetRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="OneWayBlock4Peccancy">
+<soap:operation soapAction="urn:OneWayBlock4Peccancy" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:OneWayBlock4PeccancyRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QuerySIMDetails">
+<soap:operation soapAction="urn:QuerySIMDetails" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QuerySIMDetailsRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddFellowISDN4Econet">
+<soap:operation soapAction="urn:AddFellowISDN4Econet" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:AddFellowISDN4EconetRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryCustInfo">
+<soap:operation soapAction="urn:QueryCustInfo" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QueryCustInfoRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCorporateCustomer">
+<soap:operation soapAction="urn:CreateCorporateCustomer" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:CreateCorporateCustomerRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModFellowISDN4Econet">
+<soap:operation soapAction="urn:ModFellowISDN4Econet" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModFellowISDN4EconetRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NewConnection4EconetLeo">
+<soap:operation soapAction="urn:NewConnection4EconetLeo" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:NewConnection4EconetLeoRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Lost">
+<soap:operation soapAction="urn:Lost" style="document"/>
+<wsdl:input>
+<soap:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:LostRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="WebserviceSoap12Binding" type="tns:WebservicePortType">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="OneWayReact4Peccancy">
+<soap12:operation soapAction="urn:OneWayReact4Peccancy" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:OneWayReact4PeccancyRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryPurchaseBundleOrderBySN">
+<soap12:operation soapAction="urn:QryPurchaseBundleOrderBySN" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:QryPurchaseBundleOrderBySNRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+<soap12:header use="literal" part="authHeader" message="tns:QryPurchaseBundleOrderBySNResponse"/>
+<soap12:header use="literal" part="authHeader" message="tns:QryPurchaseBundleOrderBySNResponse"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ReactivationUnderReq">
+<soap12:operation soapAction="urn:ReactivationUnderReq" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ReactivationUnderReqRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryUserProfilebyCustCode">
+<soap12:operation soapAction="urn:QueryUserProfilebyCustCode" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:QueryUserProfilebyCustCodeRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModUserBasicInfor">
+<soap12:operation soapAction="urn:ModUserBasicInfor" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModUserBasicInforRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryNextAvailableTarget">
+<soap12:operation soapAction="urn:QryNextAvailableTarget" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QryNextAvailableTargetRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryFellowISDNLog">
+<soap12:operation soapAction="urn:QueryFellowISDNLog" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QueryFellowISDNLogRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SuspensionUnderReq">
+<soap12:operation soapAction="urn:SuspensionUnderReq" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:SuspensionUnderReqRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCustState">
+<soap12:operation soapAction="urn:ModCustState" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModCustStateRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryRedemptionHis">
+<soap12:operation soapAction="urn:QryRedemptionHis" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QryRedemptionHisRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetIPP4User">
+<soap12:operation soapAction="urn:SetIPP4User" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:SetIPP4UserRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseBundleInclSN">
+<soap12:operation soapAction="urn:PurchaseBundleInclSN" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseBundleInclSNRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseBundleInclSNResponse"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseBundleInclSNResponse"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCustomer">
+<soap12:operation soapAction="urn:CreateCustomer" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:CreateCustomerRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCustomer">
+<soap12:operation soapAction="urn:ModCustomer" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModCustomerRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Restore">
+<soap12:operation soapAction="urn:Restore" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:RestoreRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCustomer4EconetLeo">
+<soap12:operation soapAction="urn:CreateCustomer4EconetLeo" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:CreateCustomer4EconetLeoRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryOrderReason">
+<soap12:operation soapAction="urn:QueryOrderReason" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:QueryOrderReasonRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseDIYBundle">
+<soap12:operation soapAction="urn:PurchaseDIYBundle" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseDIYBundleRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NewConnection">
+<soap12:operation soapAction="urn:NewConnection" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:NewConnectionRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetService">
+<soap12:operation soapAction="urn:SetService" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:SetServiceRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryUserProfile">
+<soap12:operation soapAction="urn:QueryUserProfile" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QueryUserProfileRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DuplicateSIMCard">
+<soap12:operation soapAction="urn:DuplicateSIMCard" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:DuplicateSIMCardRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ActExtVPN">
+<soap12:operation soapAction="urn:ActExtVPN" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ActExtVPNRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseBundle">
+<soap12:operation soapAction="urn:PurchaseBundle" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:PurchaseBundleRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCorporateCustomer">
+<soap12:operation soapAction="urn:ModCorporateCustomer" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModCorporateCustomerRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryService">
+<soap12:operation soapAction="urn:QryService" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QryServiceRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryFellowISDN">
+<soap12:operation soapAction="urn:QueryFellowISDN" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QueryFellowISDNRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeActivatePromotion">
+<soap12:operation soapAction="urn:DeActivatePromotion" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:DeActivatePromotionRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DelFellowISDN4Econet">
+<soap12:operation soapAction="urn:DelFellowISDN" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:DelFellowISDN4EconetRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="OneWayBlock4Peccancy">
+<soap12:operation soapAction="urn:OneWayBlock4Peccancy" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:OneWayBlock4PeccancyRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QuerySIMDetails">
+<soap12:operation soapAction="urn:QuerySIMDetails" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QuerySIMDetailsRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddFellowISDN4Econet">
+<soap12:operation soapAction="urn:AddFellowISDN4Econet" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:AddFellowISDN4EconetRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryCustInfo">
+<soap12:operation soapAction="urn:QueryCustInfo" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="AuthHeader" message="tns:QueryCustInfoRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCorporateCustomer">
+<soap12:operation soapAction="urn:CreateCorporateCustomer" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:CreateCorporateCustomerRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModFellowISDN4Econet">
+<soap12:operation soapAction="urn:ModFellowISDN4Econet" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:ModFellowISDN4EconetRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NewConnection4EconetLeo">
+<soap12:operation soapAction="urn:NewConnection4EconetLeo" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:NewConnection4EconetLeoRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Lost">
+<soap12:operation soapAction="urn:Lost" style="document"/>
+<wsdl:input>
+<soap12:body use="literal" parts="parameters"/>
+<soap12:header use="literal" part="authHeader" message="tns:LostRequest"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="WebserviceHttpBinding" type="tns:WebservicePortType">
+<http:binding verb="POST"/>
+<wsdl:operation name="OneWayReact4Peccancy">
+<http:operation location="OneWayReact4Peccancy"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryPurchaseBundleOrderBySN">
+<http:operation location="QryPurchaseBundleOrderBySN"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ReactivationUnderReq">
+<http:operation location="ReactivationUnderReq"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryUserProfilebyCustCode">
+<http:operation location="QueryUserProfilebyCustCode"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModUserBasicInfor">
+<http:operation location="ModUserBasicInfor"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryNextAvailableTarget">
+<http:operation location="QryNextAvailableTarget"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryFellowISDNLog">
+<http:operation location="QueryFellowISDNLog"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SuspensionUnderReq">
+<http:operation location="SuspensionUnderReq"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCustState">
+<http:operation location="ModCustState"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryRedemptionHis">
+<http:operation location="QryRedemptionHis"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetIPP4User">
+<http:operation location="SetIPP4User"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseBundleInclSN">
+<http:operation location="PurchaseBundleInclSN"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCustomer">
+<http:operation location="CreateCustomer"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCustomer">
+<http:operation location="ModCustomer"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Restore">
+<http:operation location="Restore"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCustomer4EconetLeo">
+<http:operation location="CreateCustomer4EconetLeo"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryOrderReason">
+<http:operation location="QueryOrderReason"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseDIYBundle">
+<http:operation location="PurchaseDIYBundle"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NewConnection">
+<http:operation location="NewConnection"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SetService">
+<http:operation location="SetService"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryUserProfile">
+<http:operation location="QueryUserProfile"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DuplicateSIMCard">
+<http:operation location="DuplicateSIMCard"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ActExtVPN">
+<http:operation location="ActExtVPN"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="PurchaseBundle">
+<http:operation location="PurchaseBundle"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModCorporateCustomer">
+<http:operation location="ModCorporateCustomer"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QryService">
+<http:operation location="QryService"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryFellowISDN">
+<http:operation location="QueryFellowISDN"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DeActivatePromotion">
+<http:operation location="DeActivatePromotion"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="DelFellowISDN4Econet">
+<http:operation location="DelFellowISDN4Econet"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="OneWayBlock4Peccancy">
+<http:operation location="OneWayBlock4Peccancy"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QuerySIMDetails">
+<http:operation location="QuerySIMDetails"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddFellowISDN4Econet">
+<http:operation location="AddFellowISDN4Econet"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="QueryCustInfo">
+<http:operation location="QueryCustInfo"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreateCorporateCustomer">
+<http:operation location="CreateCorporateCustomer"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ModFellowISDN4Econet">
+<http:operation location="ModFellowISDN4Econet"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="NewConnection4EconetLeo">
+<http:operation location="NewConnection4EconetLeo"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Lost">
+<http:operation location="Lost"/>
+<wsdl:input>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="text/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="Webservice">
+<wsdl:port name="WebserviceHttpSoap11Endpoint" binding="tns:WebserviceSoap11Binding">
+<soap:address location="http://172.27.110.10:8089/services/Webservice.WebserviceHttpSoap11Endpoint/"/>
+</wsdl:port>
+<wsdl:port name="WebserviceHttpSoap12Endpoint" binding="tns:WebserviceSoap12Binding">
+<soap12:address location="http://172.27.110.10:8089/services/Webservice.WebserviceHttpSoap12Endpoint/"/>
+</wsdl:port>
+<wsdl:port name="WebserviceHttpEndpoint" binding="tns:WebserviceHttpBinding">
+<http:address location="http://172.27.110.10:8089/services/Webservice.WebserviceHttpEndpoint/"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>
